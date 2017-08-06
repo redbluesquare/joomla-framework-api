@@ -1,0 +1,24 @@
+{
+   "database": {
+     "driver": "mysqli",
+     "host": "localhost",
+     "user": "root",
+     "password": "root",
+     "name": "local_database",
+     "prefix": "dev_"
+   },
+   "system": {
+     "list_limit": "20",
+     "gzip": "0",
+     "offset": "UTC",
+     "display_errors":"true"
+   },
+   "google": {
+   	 "client_secret":"xxx",
+   	 "client_id":"xxx.apps.googleusercontent.com"
+   },
+   
+   "languages": [
+     "en-GB"
+   ]
+ }

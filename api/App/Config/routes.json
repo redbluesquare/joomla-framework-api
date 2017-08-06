@@ -1,0 +1,6 @@
+{
+	"":"\\Controllers\\DashboardController",
+	"dashboard":"\\Controllers\\DashboardController",
+	"dashboard/:task":"\\Controllers\\DashboardController",
+	"dashboard/:task/:id":"\\Controllers\\DashboardController"
+}

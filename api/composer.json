@@ -1,0 +1,18 @@
+{
+	"name"        : "joomlaframeworkApp",
+	"description" : "Test Application of the Joomla! Framework",
+	"license"     : "GPL-2.0+",
+	"require"     : {
+		"php"               : ">=5.6",
+		"joomla/framework"  : "1.1.0",
+		"joomla/google"		: "~1.0",
+		"joomla-libraries/joomla": "~3.3",
+		"symfony/yaml"		: "~2.0"
+	},
+	"autoload"    : {
+		"psr-0": {
+			"App": ""
+		}
+	},
+	"minimum-stability": "dev"
+}

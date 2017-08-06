@@ -1,0 +1,19 @@
+{
+    "name": "joomla-libraries/joomla",
+    "description": "Joomla library extracted from Joomla cms",
+    "type": "library",
+    "license": "GNU GPL2",
+    "authors": [
+        {
+            "name": "Open Source Matters"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "autoload": {
+        "classmap": [
+            "./"
+        ]
+    }
+}
