@@ -1,15 +1,17 @@
-Header add Access-Control-Allow-Origin "*"
-Header add Access-Control-Allow-Headers "origin, x-requested-with, content-type"
-Header add Access-Control-Allow-Methods "PUT, GET, POST, DELETE, OPTIONS"
-# ======== SEF URL Routing ========
+##
+# @copyright (C) 2012-2013 Open Source Matters, Inc.  All Rights Reserved.
+##
 
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule (.*) index.php
-###########################################
-# ======== Remove multiple slashes ========
+# == Enable the Rewrite Engine ==
+RewriteEngine On
 
+# == Remove multiple slashes ==
 RewriteCond %{HTTP_HOST} !=""
 RewriteCond %{THE_REQUEST} ^[A-Z]+\s//+(.*)\sHTTP/[0-9.]+$ [OR]
 RewriteCond %{THE_REQUEST} ^[A-Z]+\s(.*/)/+\sHTTP/[0-9.]+$
 RewriteRule .* http://%{HTTP_HOST}/%1 [R=301,L]
+
+# == SEF URL Routing ==
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (.*) index.php
