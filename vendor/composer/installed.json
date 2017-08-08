@@ -1,54 +1,5 @@
 [
     {
-        "name": "psr/log",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/php-fig/log.git",
-            "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/php-fig/log/zipball/4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
-            "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.0"
-        },
-        "time": "2016-10-10T12:19:37+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.0.x-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "Psr\\Log\\": "Psr/Log/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "PHP-FIG",
-                "homepage": "http://www.php-fig.org/"
-            }
-        ],
-        "description": "Common interface for logging libraries",
-        "homepage": "https://github.com/php-fig/log",
-        "keywords": [
-            "log",
-            "psr",
-            "psr-3"
-        ]
-    },
-    {
         "name": "joomla/framework",
         "version": "1.1.0",
         "version_normalized": "1.1.0.0",
@@ -137,6 +88,43 @@
         ]
     },
     {
+        "name": "joomla-libraries/joomla",
+        "version": "3.3.0.1",
+        "version_normalized": "3.3.0.1",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/joomla-libraries/joomla.git",
+            "reference": "b189ec539bc00aa7e3b61e768e328954181930ea"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/joomla-libraries/joomla/zipball/b189ec539bc00aa7e3b61e768e328954181930ea",
+            "reference": "b189ec539bc00aa7e3b61e768e328954181930ea",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "time": "2014-05-17T08:34:41+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "./"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GNU GPL2"
+        ],
+        "authors": [
+            {
+                "name": "Open Source Matters"
+            }
+        ],
+        "description": "Joomla library extracted from Joomla cms"
+    },
+    {
         "name": "symfony/yaml",
         "version": "2.8.x-dev",
         "version_normalized": "2.8.9999999.9999999-dev",
@@ -188,40 +176,52 @@
         "homepage": "https://symfony.com"
     },
     {
-        "name": "joomla-libraries/joomla",
-        "version": "3.3.0.1",
-        "version_normalized": "3.3.0.1",
+        "name": "psr/log",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
-            "url": "https://github.com/joomla-libraries/joomla.git",
-            "reference": "b189ec539bc00aa7e3b61e768e328954181930ea"
+            "url": "https://github.com/php-fig/log.git",
+            "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/joomla-libraries/joomla/zipball/b189ec539bc00aa7e3b61e768e328954181930ea",
-            "reference": "b189ec539bc00aa7e3b61e768e328954181930ea",
+            "url": "https://api.github.com/repos/php-fig/log/zipball/4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
+            "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.3.3"
+            "php": ">=5.3.0"
         },
-        "time": "2014-05-17T08:34:41+00:00",
+        "time": "2016-10-10T12:19:37+00:00",
         "type": "library",
-        "installation-source": "dist",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "source",
         "autoload": {
-            "classmap": [
-                "./"
-            ]
+            "psr-4": {
+                "Psr\\Log\\": "Psr/Log/"
+            }
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-            "GNU GPL2"
+            "MIT"
         ],
         "authors": [
             {
-                "name": "Open Source Matters"
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
             }
         ],
-        "description": "Joomla library extracted from Joomla cms"
+        "description": "Common interface for logging libraries",
+        "homepage": "https://github.com/php-fig/log",
+        "keywords": [
+            "log",
+            "psr",
+            "psr-3"
+        ]
     }
 ]

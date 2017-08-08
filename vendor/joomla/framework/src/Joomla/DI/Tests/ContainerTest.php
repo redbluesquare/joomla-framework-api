@@ -8,7 +8,7 @@ namespace Joomla\DI\Tests;
 
 use Joomla\DI\Container;
 
-include_once 'Stubs/stubs.php';
+include_once '../api/vendor/joomla/framework/src/Joomla/DI/Tests/Stubs/stubs.php';
 
 /**
  * Tests for Container class.

@@ -25,8 +25,8 @@ class JFormFieldTest extends \PHPUnit_Framework_TestCase
 	{
 		parent::setUp();
 
-		include_once 'inspectors.php';
-		include_once 'JFormDataHelper.php';
+		include_once '../api/vendor/joomla/framework/src/Joomla/Form/Tests/inspectors.php';
+		include_once '../api/vendor/joomla/framework/src/Joomla/Form/Tests/JFormDataHelper.php';
 	}
 
 	/**
