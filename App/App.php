@@ -43,7 +43,7 @@ final class App extends AbstractWebApplication implements ContainerAwareInterfac
 	protected function doExecute() {
 		
 		$router = new AppRouter($this->input, $this);
-		$maps = json_decode(file_get_contents(JPATH_ROOT."/api/App/Config/routes.json"));
+		$maps = json_decode(file_get_contents(JPATH_ROOT."/App/Config/routes.json"));
 		$router->addMaps($maps, true);
 		$router->setControllerPrefix('\\App');
 		$router->setDefaultController('\\Controllers\\DefaultController');
@@ -52,6 +52,7 @@ final class App extends AbstractWebApplication implements ContainerAwareInterfac
 		$controller = $router->getController($this->get('uri.route'));
 		//fetch the content
 		$content = $controller->execute();
+		
 		//set the content
 		$this->setBody ( json_encode($content,JSON_UNESCAPED_SLASHES ) );
 	}

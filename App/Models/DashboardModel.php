@@ -20,7 +20,7 @@ class DashboardModel extends DefaultModel
 	}	
 	protected function _buildWhere(&$query, $val)
 	{
-		if(is_int($val) > 0)
+		if($val != null)
 		{
 			$query->where('c.id = '.(int)$val);
 		}

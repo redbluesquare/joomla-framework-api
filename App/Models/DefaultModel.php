@@ -108,6 +108,19 @@ class DefaultModel extends AbstractDatabaseModel
 		return $this->db->setQuery($query)->loadObject();
 	}
 	
+	public function getItem($id)
+	{
+		if($this->input->getMethod()=='GET')
+		{
+			$query = $this->db->getQuery(true);
+			
+			$query = $this->_buildQuery();
+			$this->_buildWhere($query, $id);
+			$this->db->setQuery($query);
+		}
+		return $this->db->setQuery($query)->loadObject();
+	}
+
 	public function listItems($pc = null, $id = null)
   	{
   		$query = $this->db->getQuery(true);

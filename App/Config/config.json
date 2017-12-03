@@ -4,8 +4,8 @@
      "host": "localhost",
      "user": "root",
      "password": "root",
-     "name": "local_database",
-     "prefix": "dev_"
+     "name": "local_digidevcloud",
+     "prefix": "dev1_"
    },
    "system": {
      "list_limit": "20",
@@ -13,11 +13,6 @@
      "offset": "UTC",
      "display_errors":"true"
    },
-   "google": {
-   	 "client_secret":"xxx",
-   	 "client_id":"xxx.apps.googleusercontent.com"
-   },
-   
    "languages": [
      "en-GB"
    ]

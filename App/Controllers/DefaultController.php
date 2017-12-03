@@ -18,7 +18,7 @@ Class DefaultController extends AbstractController implements ContainerAwareInte
 		}
 		else 
 		{
-			echo "Method not found";
+			echo "Method not found ";
 		}
 	}
 	
