@@ -71,8 +71,8 @@ class DefaultModel extends AbstractDatabaseModel
 	public function validate_user_email($user_email)
 	{
 		$query = $this->db->getQuery(true)
-			->select('u.id, u.username, u.name, u.email')
-			->from('#__users as u')
+			->select('u.ddc_user_id, u.username, u.first_name, u.last_name, u.email')
+			->from('#__ddc_users as u')
 			->where('(u.email=' . $this->db->quote($user_email). ') And (activation = 0) And (block = 0)');
 		$this->db->setQuery($query);
 		$result = $this->db->loadObject();

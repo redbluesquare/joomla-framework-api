@@ -2,5 +2,7 @@
 	"":"\\Controllers\\DashboardController",
 	"dashboard":"\\Controllers\\DashboardController",
 	"dashboard/:task":"\\Controllers\\DashboardController",
-	"dashboard/:task/:id":"\\Controllers\\DashboardController"
+	"dashboard/:task/:id":"\\Controllers\\DashboardController",
+	"profiles/:task":"\\Controllers\\ProfilesController",
+	"profiles/:task/:id":"\\Controllers\\ProfilesController"
 }
