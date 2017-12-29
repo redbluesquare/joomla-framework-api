@@ -97,7 +97,7 @@ class DefaultModel extends AbstractDatabaseModel
 	
 	public function getItemByAlias($alias)
 	{
-		if($this->input->getMethod()=='GET')
+		if($this->input->getMethod()=='POST')
 		{
 			$query = $this->db->getQuery(true);
 			
