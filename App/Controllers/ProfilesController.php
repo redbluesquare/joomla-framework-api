@@ -23,4 +23,15 @@ class ProfilesController extends DefaultController
 		
 		return array('item'=>$item);
 	}
+
+	public function login()
+	{
+		$model = new ProfilesModel($this->getInput(), $this->getContainer()->get('db'));
+		$item = array("succes"=>false);
+		if($model->user_login()){
+			$item = $model->createUserToken();
+		}
+		
+		return array('item'=>$item);
+	}
 }

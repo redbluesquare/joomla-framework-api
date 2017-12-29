@@ -14,20 +14,20 @@ class ProfilesModel extends DefaultModel
 	protected function _buildQuery()
   	{
   		$query = $this->db->getQuery(true);
-  		$query->select('u.id, u.username, u.first_name, u.last_name, u.email')
-  			->from($this->db->quoteName('#__users', 'u'))
-  			->group('u.id');
+  		$query->select('u.ddc_user_id, u.username, u.first_name, u.last_name, u.email, u.password')
+  			->from($this->db->quoteName('#__ddc_users', 'u'))
+  			->group('u.ddc_user_id');
 		return $query;
 	}	
 	protected function _buildWhere(&$query, $val)
 	{
 		if(is_int($val) > 0)
 		{
-			$query->where('u.id = '.(int)$val);
+			$query->where('u.ddc_user_id = '.(int)$val);
 		}
 		if($this->input->get('myId', null)!=null)
 		{
-			$query->where('u.id = '.(int)$this->input->get('myId', null));
+			$query->where('u.ddc_user_id = '.(int)$this->input->get('myId', null));
 		}
 		
 		return $query;
@@ -98,6 +98,43 @@ class ProfilesModel extends DefaultModel
 		}
 		
 		return $user;
+	}
+
+	public function user_login(){
+		if(($this->input->getMethod()=='POST') && ($this->_token == $this->input->get("apptoken", null,'string')))
+		{
+			$username = $this->input->get("username", null,'string');
+			$password = $this->input->get("sk", null, "string");
+
+			if($user = $this->getUser(null,null,$username)){
+				$result = password_verify($password,$user->password);
+				return $result;
+			}
+
+			return false;
+		}
+	}
+
+	public function createUserToken(){
+		$result = array("success"=>false);
+		$username = $this->input->get("username", null,'string');
+		$user = $this->getUser(null,null,$username);
+		$token = $this->randStrGen(20);
+		$series = $this->randStrGen(20);
+		$columns = array("user_id","token", "series", "invalid", "time", "uastring" );
+		$tokenTime = strtotime(Date('Y-m-d H:i:s'))+(3600*24);
+		$data = array($user->ddc_user_id,$token,$this->randStrGen(20),0,$tokenTime,"ddcjfa" );
+		if($this->insert("#__ddc_user_keys", $columns, $data)){
+			$result["success"] = true;
+			$result["user_id"]= $user->ddc_user_id;
+			$result["token"]= $token;
+			$result["first_name"]= $user->first_name;
+			$result["last_name"]= $user->last_name;
+			$result["email"]= $user->email;
+			$result["tokenExpiry"]= $tokenTime;
+		}
+
+		return $result;
 	}
 	
 }
