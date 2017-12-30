@@ -4,5 +4,8 @@
 	"dashboard/:task":"\\Controllers\\DashboardController",
 	"dashboard/:task/:id":"\\Controllers\\DashboardController",
 	"profiles/:task":"\\Controllers\\ProfilesController",
-	"profiles/:task/:id":"\\Controllers\\ProfilesController"
+	"profiles/:task/:id":"\\Controllers\\ProfilesController",
+	"messages":"\\Controllers\\MessagesController",
+	"messages/:task":"\\Controllers\\MessagesController",
+	"messages/:task/:id":"\\Controllers\\MessagesController"
 }
