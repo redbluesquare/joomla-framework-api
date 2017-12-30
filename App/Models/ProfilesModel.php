@@ -136,5 +136,28 @@ class ProfilesModel extends DefaultModel
 
 		return $result;
 	}
+
+	public function authenticateToken()
+	{
+		$result = array("success"=>false);
+		if(($this->input->getMethod()=='POST') && ($this->_token == $this->input->get("apptoken", null,'string')))
+		{
+			$token = $this->input->get("token", null,'string');
+			$message = $this->input->get("message", null,'string');
+			
+			$query = $this->db->getQuery(true);
+			$query->select('uk.user_id')
+				->from($this->db->quoteName('#__ddc_user_keys', 'uk'))
+				->group('uk.ddc_user_key_id')
+				->where('uk.token = "'. $token . '"');
+			$this->db->setQuery($query);
+			if($item = $this->db->loadObject()){
+				$result["user_id"] = $item->user_id;
+				$result["success"] = true;
+			}
+		}
+		
+		return $result;
+	}
 	
 }

@@ -27,7 +27,7 @@ class DefaultModel extends AbstractDatabaseModel
 	
 	public function insert($table, $columns, $data)
 	{
-		//if($this->input->getMethod()=='POST'){
+		if($this->input->getMethod()=='POST'){
 			$query = $this->db->getQuery(true)
 				->insert($this->db->qn($table))
 				->columns($this->db->qn($columns))
@@ -43,11 +43,11 @@ class DefaultModel extends AbstractDatabaseModel
 			}
 			$result->success = true;
 			return $result;
-		//}else{
+		}else{
 			$result = new \stdClass();
 			$result->success = false;
 			return false;
-		//}
+		}
 			
 	}
 	
